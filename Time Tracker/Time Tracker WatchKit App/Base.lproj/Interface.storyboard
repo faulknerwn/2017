@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Time_Tracker_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <separator alignment="left" verticalAlignment="bottom" id="9X7-As-imm">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </separator>
+                        <label alignment="left" verticalAlignment="center" text="Today: 3h 4m" id="bbc-PE-qal"/>
+                        <label width="136" height="71" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.5" id="P9g-Eh-NKf">
+                            <string key="text">Today
+ 2h 4m</string>
+                            <fontDescription key="font" type="boldSystem" pointSize="29"/>
+                        </label>
+                        <button width="0.90000000000000002" alignment="center" verticalAlignment="center" title="Clock-In" id="36g-J7-1Jk">
+                            <connections>
+                                <action selector="clockInOutTapped" destination="AgC-eL-Hgc" id="Nda-NQ-yjO"/>
+                            </connections>
+                        </button>
+                        <separator alignment="left" id="k1b-sP-3JP"/>
+                    </items>
+                    <menu key="menu" id="2vp-nd-a7I">
+                        <items>
+                            <menuItem title="History" icon="info" id="4dG-N5-D8x">
+                                <connections>
+                                    <action selector="historyTapped" destination="AgC-eL-Hgc" id="uPy-Jc-pQ2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reset All" icon="trash" id="GbX-NY-eT5">
+                                <connections>
+                                    <action selector="resetAllTapped" destination="AgC-eL-Hgc" id="wvP-j5-lG4"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="button" destination="36g-J7-1Jk" id="Tp4-aB-oAl"/>
+                        <outlet property="middleLabel" destination="P9g-Eh-NKf" id="MGi-17-IDF"/>
+                        <outlet property="topLabel" destination="bbc-PE-qal" id="kNx-jg-Rif"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--timeTableController-->
+        <scene sceneID="mRd-MH-QLO">
+            <objects>
+                <controller identifier="timeTableController" id="wa4-Wc-bKH" customClass="TimeTableInterfaceController" customModule="Time_Tracker_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="dd0-qG-0K8">
+                            <items>
+                                <tableRow identifier="clockInOutRow" id="6c0-yg-orv" customClass="ClockInOutRowController" customModule="Time_Tracker_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="i3R-ri-psg">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="MxE-a1-dga">
+                                                <fontDescription key="font" type="system" pointSize="20"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="MxE-a1-dga" id="Gw5-70-dse"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="dd0-qG-0K8" id="Y7P-Sk-UF1"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="312" y="131"/>
+        </scene>
+        <!--TimeDetail-->
+        <scene sceneID="Jwa-X3-j84">
+            <objects>
+                <controller identifier="TimeDetail" id="CxU-d5-cVL" customClass="DetailedInterfaceController" customModule="Time_Tracker_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Clock-In" id="UhH-ID-uTU"/>
+                        <label alignment="left" text="May 5th, 12:08 AM" id="SYh-m3-U1a"/>
+                        <label alignment="left" text="Clock-Out" id="vMZ-DF-PwS"/>
+                        <label alignment="left" text="May 5th, 12:10 AM" id="Umj-af-1cp"/>
+                    </items>
+                    <connections>
+                        <outlet property="clockInLabel" destination="SYh-m3-U1a" id="VbB-ti-2sQ"/>
+                        <outlet property="clockOutLabel" destination="Umj-af-1cp" id="4JT-Gy-HXv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="343" y="397"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="7Xy-hY-dXv">
+            <objects>
+                <controller id="Kh3-gL-kPq"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
