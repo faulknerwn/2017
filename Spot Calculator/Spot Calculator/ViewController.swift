@@ -52,31 +52,63 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var forwardThrow: [Double] =  [0.15,0.10,0.18,0.15,0.15]
     var displacement: Double = 0.0
     var spotWords: String = ""
+    var activityIndicator = UIActivityIndicatorView()
     
-   let websites = ["alaska": ["ADK","ADQ","AKN","ANC","ANN","BET","BRW","BTI","BTT","CDB","CZF","EHM","FAI","FYU","GAL","GKN","HOM","JNU","LUR","MCG","MDO","OME","OTZ","SNP","TKA","UNK","YAK","IKO","AFM","5AB","5AC","5AD","5AE","5AF","5AG"], "bos": ["BDL","BGR","CAR","PWM","EMI","ACK","BOS","BML","ACY","ALB","BUF","JFK","PLB","SYR","CLE","CMH","CVG","AGC","AVP","ORF","RIC","ROA","CRW"], "chi": ["BRL","DBQ","DSM","MCW","JOT","SPI","EVV","FWA","IND","ICT","SLN","LOU","ECK","MKG","MQT","SSM","TVC","AXN","DLH","INL","MSP","CGI","COU","MKC","SGF","STL","GFK","OMA","ABR","FSD","GRB","LSE"], "dfw": ["BHM","HSV","MGM","MOB","FSM","LIT","LCH","MSY","SHV","JAN","OKC","TUL","BNA","MEM","TYS","BRO","CLL","CRP","DAL","DRT","HOU","LRD","PSX","SAT","SPS","T01","T06","T07","4J3","H51","H52","H61"], "hawaii": ["LIH","HNL","OGG","KOA","ITO"], "mia": ["EYW","JAX","MIA","MLB","PFN","PIE","TLH","ATL","CSG","SAV","HAT","ILM","RDU","CAE","CHS","FLO","GSP","2XG"], "other_pac":  ["JON","KWA","MAJ","MDY","PPG","TTK","AWK","GRO","GSN","TNI","GUM","TKK","PNI","ROR","T11"], "sfo": ["BIH","BLH","FAT","FOT","ONT","RBL","SAC","SAN","SBA","SFO","AST","OTH","PDX","SEA","YKM"], "slc": ["LWS","PHX"] ]
+    let websites = ["alaska": ["ADK","ADQ","AKN","ANC","ANN","BET","BRW","BTI","BTT","CDB","CZF","EHM","FAI","FYU","GAL","GKN","HOM","JNU","LUR","MCG","MDO","OME","OTZ","SNP","TKA","UNK","YAK","IKO","AFM","5AB","5AC","5AD","5AE","5AF","5AG"], "bos": ["BDL","BGR","CAR","PWM","EMI","ACK","BOS","BML","ACY","ALB","BUF","JFK","PLB","SYR","CLE","CMH","CVG","AGC","AVP","ORF","RIC","ROA","CRW"], "chi": ["BRL","DBQ","DSM","MCW","JOT","SPI","EVV","FWA","IND","ICT","SLN","LOU","ECK","MKG","MQT","SSM","TVC","AXN","DLH","INL","MSP","CGI","COU","MKC","SGF","STL","GFK","OMA","ABR","FSD","GRB","LSE"], "dfw": ["BHM","HSV","MGM","MOB","FSM","LIT","LCH","MSY","SHV","JAN","OKC","TUL","BNA","MEM","TYS","BRO","CLL","CRP","DAL","DRT","HOU","LRD","PSX","SAT","SPS","T01","T06","T07","4J3","H51","H52","H61"], "hawaii": ["LIH","HNL","OGG","KOA","ITO"], "mia": ["EYW","JAX","MIA","MLB","PFN","PIE","TLH","ATL","CSG","SAV","HAT","ILM","RDU","CAE","CHS","FLO","GSP","2XG"], "other_pac":  ["JON","KWA","MAJ","MDY","PPG","TTK","AWK","GRO","GSN","TNI","GUM","TKK","PNI","ROR","T11"], "sfo": ["BIH","BLH","FAT","FOT","ONT","RBL","SAC","SAN","SBA","SFO","AST","OTH","PDX","SEA","YKM"], "slc": ["LWS","PHX"] ]
     
     @IBOutlet var airport: UIPickerView!
     @IBOutlet var airplane: UIPickerView!
     
-    @IBOutlet var w12: UILabel!
-    @IBOutlet var d12: UILabel!
-    @IBOutlet var w9: UILabel!
-    @IBOutlet var d9: UILabel!
+    @IBOutlet var ownWinds: UISwitch!
     
-    @IBOutlet var w6: UILabel!
-    @IBOutlet var d6: UILabel!
-    @IBOutlet var w3: UILabel!
-    @IBOutlet var d3: UILabel!
+    
+    @IBOutlet var w12: UITextField!
+    @IBOutlet var d12: UITextField!
+    
+    @IBOutlet var w9: UITextField!
+    @IBOutlet var d9: UITextField!
+    
+    @IBOutlet var w6: UITextField!
+    @IBOutlet var d6: UITextField!
+    
+    @IBOutlet var d3: UITextField!
+    @IBOutlet var w3: UITextField!
+    
     @IBOutlet var wg: UITextField!
     
     @IBOutlet var dg: UITextField!
     @IBOutlet var calculateSpotButton: UIButton!
     @IBOutlet var spot: UILabel!
     
+    @IBAction func infoClicked(_ sender: Any) {
+        let alertController = UIAlertController(title: "App Info", message: "Choose Airplane Type, and Default Winds Aloft Location. \n If You Wish To Enter Your Own Winds Aloft Information, Change Switch To On. \nClick Compute Spot to Get Ideal Spot.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+            print("button pressed")
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        
+        self.present(alertController, animated: true, completion: nil) //display it
+    }
     func getWinds() {
         
-        for site in  ["alaska", "bos", "chi", "dfw", "hawaii", "mia", "other_pac", "sfo", "slc"] {
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         
+        activityIndicator.center = self.view.center
+        
+        activityIndicator.hidesWhenStopped = true
+        
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
+        for site in  ["alaska", "bos", "chi", "dfw", "hawaii", "mia", "other_pac", "sfo", "slc"] {
+            
             for airport in websites[site]! {
                 if airport == chosenAirport {
                     webpage = site.lowercased()
@@ -92,7 +124,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             data, response, error in
             if error != nil {
                 print(error ?? 0 )
-                print("hjhjkdsajkh")
+                
                 
             } else {
                 if let unwrappedData = data {
@@ -170,9 +202,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
             })
             
-            
         }
+        
         task.resume()
+        activityIndicator.stopAnimating()
     }
     @IBAction func calculate(_ sender: Any) {
         
@@ -182,8 +215,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         UserDefaults.standard.set(chosenAirportNumber, forKey: "AirportNumber")
         UserDefaults.standard.set(chosenAirport, forKey: "Airport")
         
-        getWinds()
-        
+        if !ownWinds.isOn {
+            
+            getWinds()
+        }
+        else {
+            wind3s=w3.text!
+            wind3d=d3.text!
+            wind6s=w6.text!
+            wind6d=d6.text!
+            wind9s=w6.text!
+            wind9d=d9.text!
+            wind12s=w12.text!
+            wind12d=d12.text!
+        }
         convertedDirections[0] = Int(dg.text!)!
         convertedDirections[1] = Int(wind3d)!
         convertedDirections[2] = Int(wind6d)!
@@ -209,28 +254,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //var v: Double = 1
         
         while i < 5 {
-           /*if convertedDirections[i] == 990 {
-                convertedDirections[i] = 0
-            }
-            
-            convertedDirections[i] = 90 - convertedDirections[i]
-            
-            if convertedDirections[i] < 0 {
-                convertedDirections[i] = 360 + convertedDirections[i]
-            }
-            if convertedDirections[i] > 90 && convertedDirections[i] < 180 {
-                convertedDirections[i] = 180 - convertedDirections[i]
-                h = -1
-            }
-            if convertedDirections[i] > 180 && convertedDirections[i] < 270 {
-                convertedDirections[i] = convertedDirections[i] - 180
-                v = -1
-                h = -1
-            }
-            if convertedDirections[i] > 270 && convertedDirections[i] < 360 {
-                convertedDirections[i] = 360 - convertedDirections[i]
-                v = -1
-            } */
+            /*if convertedDirections[i] == 990 {
+             convertedDirections[i] = 0
+             }
+             
+             convertedDirections[i] = 90 - convertedDirections[i]
+             
+             if convertedDirections[i] < 0 {
+             convertedDirections[i] = 360 + convertedDirections[i]
+             }
+             if convertedDirections[i] > 90 && convertedDirections[i] < 180 {
+             convertedDirections[i] = 180 - convertedDirections[i]
+             h = -1
+             }
+             if convertedDirections[i] > 180 && convertedDirections[i] < 270 {
+             convertedDirections[i] = convertedDirections[i] - 180
+             v = -1
+             h = -1
+             }
+             if convertedDirections[i] > 270 && convertedDirections[i] < 360 {
+             convertedDirections[i] = 360 - convertedDirections[i]
+             v = -1
+             } */
             
             if convertedDirections[i] == 990 {
                 convertedDirections[i] = 0
@@ -252,7 +297,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             if convertedDirections[i] == 270 {
                 horizontal[i] = Double(convertedWindDistance[i]) * -1
-               vertical[i] = 0
+                vertical[i] = 0
             }
             if 0 < convertedDirections[i] && convertedDirections[i] < 90 {
                 vertical[i] = cos((Double(convertedDirections[i]) * 3.14 / 180) ) * Double(convertedWindDistance[i])
@@ -277,8 +322,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 horizontal[i] = sin((Double(convertedAngle) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * -1
             }
             //vertical[i] = sin((Double(convertedDirections[i]) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * v
-           // horizontal[i] = cos((Double(convertedDirections[i]) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * h
-           
+            // horizontal[i] = cos((Double(convertedDirections[i]) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * h
+            
             if chosenPlane == "Cessna 182" {
                 vertical[4] = 0
                 horizontal[4] = 0
@@ -292,7 +337,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             
         }
-    
+        
         
         displacement = sqrt(verTotal*verTotal + horTotal*horTotal)
         print ("displacement", displacement)
@@ -300,8 +345,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         print(finalAngle)
         
         /*if finalAngle < 0 {
-            finalAngle = 0 - finalAngle
-        }*/
+         finalAngle = 0 - finalAngle
+         }*/
         
         if horTotal < 0 && verTotal > 0 {
             finalAngle = 360 - finalAngle
@@ -315,7 +360,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if horTotal > 0 && verTotal > 0 {
             finalAngle =  90 - finalAngle
         }
-         print(finalAngle)
+        print(finalAngle)
         print("JR", jumpRunLength[chosenPlaneNumber]/2, "FT", forwardThrow[chosenPlaneNumber] )
         var greenLight = (displacement - jumpRunLength[chosenPlaneNumber]/3 - forwardThrow[chosenPlaneNumber])
         greenLight = (greenLight*10).rounded() / 10
@@ -326,15 +371,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         spotWords = "Spot: Green Light at " + String(greenLight) + " heading " + finalA
         
-            spot.text = spotWords
-    
+        spot.text = spotWords
+        
     } //calculate
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
-
+    
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if (pickerView.tag == 2) {
             return planeData.count
@@ -343,7 +388,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-        // The data to return for the row and component (column) that's being passed in
+    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView.tag == 2) {
             return planeData[row]
@@ -383,27 +428,30 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             chosenAirportNumber = row
             UserDefaults.standard.set(chosenAirport, forKey: "Airport")
             UserDefaults.standard.set(chosenAirportNumber, forKey: "AirportNumber")
+            if !ownWinds.isOn {
+                getWinds()
+            }
         }
     }
-        
-        
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         wg.delegate = self
         dg.delegate = self
-    
+        
         self.airplane.delegate = self
         self.airplane.dataSource = self
         self.airport.delegate = self
         self.airport.dataSource = self
         airportData = ["2XG","4J3","5AB","5AC","5AD","5AE","5AF","5AG","ABR","ACK","ACY","ADK","ADQ","AFM","AGC","AKN","ALB","ANC","ANN","AST","ATL","AVP","AWK","AXN","BDL","BET","BGR","BHM","BIH","BLH","BML","BNA","BOS","BRL","BRO","BRW","BTI","BTT","BUF","CAE","CAR","CDB","CGI","CHS","CLE","CLL","CMH","COU","CRP","CRW","CSG","CVG","CZF","DAL","DBQ","DLH","DRT","DSM","ECK","EHM","EMI","EVV","EYW","FAI","FAT","FLO","FOT","FSD","FSM","FWA","FYU","GAL","GFK","GKN","GRB","GRO","GSN","GSP","GUM","H51","H52","H61","HAT","HNL","HOM","HOU","HSV","ICT","IKO","ILM","IND","INL","ITO","JAN","JAX","JFK","JNU","JON","JOT","KOA","KWA","LCH","LIH","LIT","LOU","LRD","LSE","LUR","LWS","MAJ","MCG","MCW","MDO","MDY","MEM","MGM","MIA","MKC","MKG","MLB","MOB","MQT","MSP","MSY","OGG","OKC","OMA","OME","ONT","ORF","OTH","OTZ","PDX","PFN","PHX","PIE","PLB","PNI","PPG","PSX","PWM","RBL","RDU","RIC","ROA","ROR","SAC","SAN","SAT","SAV","SBA","SEA","SFO","SGF","SHV","SLN","SNP","SPI","SPS","SSM","STL","SYR","T01","T06","T07","T11","TKA","TKK","TLH","TNI","TTK","TUL","TVC","TYS","UNK","YAK","YKM"]
         
-         planeData = ["Caravan", "Cessna 182", "King Air", "Otter", "Pac 750"]
+        planeData = ["Caravan", "Cessna 182", "King Air", "Otter", "Pac 750"]
         
         
         
-            
+        
         if (UserDefaults.standard.object(forKey: "Plane") != nil) {
             chosenPlane = UserDefaults.standard.object(forKey: "Plane") as! String
             chosenPlaneNumber = UserDefaults.standard.object(forKey: "PlaneNumber") as! Int
@@ -414,16 +462,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             UserDefaults.standard.set(chosenPlane, forKey: "Plane")
             UserDefaults.standard.set(0, forKey: "PlaneNumber")
         }
-       
+        
         if (UserDefaults.standard.object(forKey: "Airport") != nil) {
             chosenAirport = UserDefaults.standard.object(forKey: "Airport") as! String
             chosenAirportNumber = UserDefaults.standard.object(forKey: "AirportNumber") as! Int
             airport.selectRow(chosenAirportNumber, inComponent: 0, animated: false)
         }
         else {
-             chosenAirport = "CLL"
+            chosenAirport = "CLL"
             UserDefaults.standard.set(chosenAirport, forKey: "Airport")
-             UserDefaults.standard.set(54, forKey: "AirportNumber")
+            UserDefaults.standard.set(54, forKey: "AirportNumber")
             
         }
         
@@ -434,7 +482,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
