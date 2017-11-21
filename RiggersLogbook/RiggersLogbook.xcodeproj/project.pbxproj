@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93E194090AD75576EFF7D4C5 /* Pods_RiggersLogbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49435142CB20F2DAABC783FB /* Pods_RiggersLogbook.framework */; };
+		E3AA53011FBBD12F00442BD0 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA53001FBBD12F00442BD0 /* newUserViewController.swift */; };
+		E3AA53031FBBD14B00442BD0 /* newRigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA53021FBBD14B00442BD0 /* newRigViewController.swift */; };
+		E3AA53051FBBD35800442BD0 /* LogbookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA53041FBBD35800442BD0 /* LogbookTableViewController.swift */; };
+		E3AE3ED21FB67998009FE6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE3ED11FB67998009FE6DC /* AppDelegate.swift */; };
+		E3AE3ED41FB67998009FE6DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE3ED31FB67998009FE6DC /* ViewController.swift */; };
+		E3AE3ED71FB67999009FE6DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AE3ED51FB67999009FE6DC /* Main.storyboard */; };
+		E3AE3EDA1FB67999009FE6DC /* RiggersLogbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3AE3ED81FB67999009FE6DC /* RiggersLogbook.xcdatamodeld */; };
+		E3AE3EDC1FB6799A009FE6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3AE3EDB1FB6799A009FE6DC /* Assets.xcassets */; };
+		E3AE3EDF1FB6799A009FE6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AE3EDD1FB6799A009FE6DC /* LaunchScreen.storyboard */; };
+		E3AE3EE91FB679EA009FE6DC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AE3EE81FB679EA009FE6DC /* CloudKit.framework */; };
+		E3AE3EEB1FB69312009FE6DC /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE3EEA1FB69312009FE6DC /* AddViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		44EF3CF3E414AEB3E7AE0094 /* Pods-RiggersLogbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiggersLogbook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RiggersLogbook/Pods-RiggersLogbook.debug.xcconfig"; sourceTree = "<group>"; };
+		49435142CB20F2DAABC783FB /* Pods_RiggersLogbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RiggersLogbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A090497F4B489DF710E0F526 /* Pods-RiggersLogbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiggersLogbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-RiggersLogbook/Pods-RiggersLogbook.release.xcconfig"; sourceTree = "<group>"; };
+		E3AA53001FBBD12F00442BD0 /* newUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
+		E3AA53021FBBD14B00442BD0 /* newRigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRigViewController.swift; sourceTree = "<group>"; };
+		E3AA53041FBBD35800442BD0 /* LogbookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookTableViewController.swift; sourceTree = "<group>"; };
+		E3AE3ECE1FB67998009FE6DC /* RiggersLogbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiggersLogbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3AE3ED11FB67998009FE6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3AE3ED31FB67998009FE6DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3AE3ED61FB67999009FE6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3AE3ED91FB67999009FE6DC /* RiggersLogbook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RiggersLogbook.xcdatamodel; sourceTree = "<group>"; };
+		E3AE3EDB1FB6799A009FE6DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3AE3EDE1FB6799A009FE6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3AE3EE01FB6799A009FE6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3AE3EE61FB679BD009FE6DC /* RiggersLogbook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RiggersLogbook.entitlements; sourceTree = "<group>"; };
+		E3AE3EE81FB679EA009FE6DC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E3AE3EEA1FB69312009FE6DC /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3AE3ECB1FB67998009FE6DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AE3EE91FB679EA009FE6DC /* CloudKit.framework in Frameworks */,
+				93E194090AD75576EFF7D4C5 /* Pods_RiggersLogbook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C8059F62EDB4CA610AE632D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44EF3CF3E414AEB3E7AE0094 /* Pods-RiggersLogbook.debug.xcconfig */,
+				A090497F4B489DF710E0F526 /* Pods-RiggersLogbook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3AE3EC51FB67996009FE6DC = {
+			isa = PBXGroup;
+			children = (
+				E3AE3ED01FB67998009FE6DC /* RiggersLogbook */,
+				E3AE3ECF1FB67998009FE6DC /* Products */,
+				E3AE3EE71FB679EA009FE6DC /* Frameworks */,
+				C8059F62EDB4CA610AE632D7 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E3AE3ECF1FB67998009FE6DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3AE3ECE1FB67998009FE6DC /* RiggersLogbook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3AE3ED01FB67998009FE6DC /* RiggersLogbook */ = {
+			isa = PBXGroup;
+			children = (
+				E3AE3EE61FB679BD009FE6DC /* RiggersLogbook.entitlements */,
+				E3AE3ED11FB67998009FE6DC /* AppDelegate.swift */,
+				E3AE3ED31FB67998009FE6DC /* ViewController.swift */,
+				E3AE3ED51FB67999009FE6DC /* Main.storyboard */,
+				E3AA53041FBBD35800442BD0 /* LogbookTableViewController.swift */,
+				E3AA53001FBBD12F00442BD0 /* newUserViewController.swift */,
+				E3AA53021FBBD14B00442BD0 /* newRigViewController.swift */,
+				E3AE3EEA1FB69312009FE6DC /* AddViewController.swift */,
+				E3AE3EDB1FB6799A009FE6DC /* Assets.xcassets */,
+				E3AE3EDD1FB6799A009FE6DC /* LaunchScreen.storyboard */,
+				E3AE3EE01FB6799A009FE6DC /* Info.plist */,
+				E3AE3ED81FB67999009FE6DC /* RiggersLogbook.xcdatamodeld */,
+			);
+			path = RiggersLogbook;
+			sourceTree = "<group>";
+		};
+		E3AE3EE71FB679EA009FE6DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3AE3EE81FB679EA009FE6DC /* CloudKit.framework */,
+				49435142CB20F2DAABC783FB /* Pods_RiggersLogbook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3AE3ECD1FB67998009FE6DC /* RiggersLogbook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3AE3EE31FB6799A009FE6DC /* Build configuration list for PBXNativeTarget "RiggersLogbook" */;
+			buildPhases = (
+				C6FDC176E8157241FA7E8D19 /* [CP] Check Pods Manifest.lock */,
+				E3AE3ECA1FB67998009FE6DC /* Sources */,
+				E3AE3ECB1FB67998009FE6DC /* Frameworks */,
+				E3AE3ECC1FB67998009FE6DC /* Resources */,
+				85CCD0DE670555C589CD7ED3 /* [CP] Embed Pods Frameworks */,
+				3A5D05D29A5E9E23C26B3BD8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RiggersLogbook;
+			productName = RiggersLogbook;
+			productReference = E3AE3ECE1FB67998009FE6DC /* RiggersLogbook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3AE3EC61FB67997009FE6DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Leprechaun Skydiving";
+				TargetAttributes = {
+					E3AE3ECD1FB67998009FE6DC = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E3AE3EC91FB67997009FE6DC /* Build configuration list for PBXProject "RiggersLogbook" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3AE3EC51FB67996009FE6DC;
+			productRefGroup = E3AE3ECF1FB67998009FE6DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3AE3ECD1FB67998009FE6DC /* RiggersLogbook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3AE3ECC1FB67998009FE6DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AE3EDF1FB6799A009FE6DC /* LaunchScreen.storyboard in Resources */,
+				E3AE3EDC1FB6799A009FE6DC /* Assets.xcassets in Resources */,
+				E3AE3ED71FB67999009FE6DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A5D05D29A5E9E23C26B3BD8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RiggersLogbook/Pods-RiggersLogbook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85CCD0DE670555C589CD7ED3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RiggersLogbook/Pods-RiggersLogbook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FDC176E8157241FA7E8D19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3AE3ECA1FB67998009FE6DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AE3EDA1FB67999009FE6DC /* RiggersLogbook.xcdatamodeld in Sources */,
+				E3AE3ED41FB67998009FE6DC /* ViewController.swift in Sources */,
+				E3AA53031FBBD14B00442BD0 /* newRigViewController.swift in Sources */,
+				E3AA53051FBBD35800442BD0 /* LogbookTableViewController.swift in Sources */,
+				E3AE3EEB1FB69312009FE6DC /* AddViewController.swift in Sources */,
+				E3AE3ED21FB67998009FE6DC /* AppDelegate.swift in Sources */,
+				E3AA53011FBBD12F00442BD0 /* newUserViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E3AE3ED51FB67999009FE6DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3AE3ED61FB67999009FE6DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3AE3EDD1FB6799A009FE6DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3AE3EDE1FB6799A009FE6DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3AE3EE11FB6799A009FE6DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3AE3EE21FB6799A009FE6DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3AE3EE41FB6799A009FE6DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44EF3CF3E414AEB3E7AE0094 /* Pods-RiggersLogbook.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RiggersLogbook/RiggersLogbook.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGHY24SHKF;
+				INFOPLIST_FILE = RiggersLogbook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leprechaunskydiving.RiggersLogbook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E3AE3EE51FB6799A009FE6DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A090497F4B489DF710E0F526 /* Pods-RiggersLogbook.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RiggersLogbook/RiggersLogbook.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JGHY24SHKF;
+				INFOPLIST_FILE = RiggersLogbook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leprechaunskydiving.RiggersLogbook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3AE3EC91FB67997009FE6DC /* Build configuration list for PBXProject "RiggersLogbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3AE3EE11FB6799A009FE6DC /* Debug */,
+				E3AE3EE21FB6799A009FE6DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3AE3EE31FB6799A009FE6DC /* Build configuration list for PBXNativeTarget "RiggersLogbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3AE3EE41FB6799A009FE6DC /* Debug */,
+				E3AE3EE51FB6799A009FE6DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E3AE3ED81FB67999009FE6DC /* RiggersLogbook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E3AE3ED91FB67999009FE6DC /* RiggersLogbook.xcdatamodel */,
+			);
+			currentVersion = E3AE3ED91FB67999009FE6DC /* RiggersLogbook.xcdatamodel */;
+			path = RiggersLogbook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E3AE3EC61FB67997009FE6DC /* Project object */;
+}

@@ -1,0 +1,5 @@
+ use_frameworks!
+
+target 'RiggersLogbook' do
+	pod 'SearchTextField'
+end
