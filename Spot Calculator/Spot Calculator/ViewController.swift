@@ -207,6 +207,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         task.resume()
         activityIndicator.stopAnimating()
     }
+    
+    
+    
     @IBAction func calculate(_ sender: Any) {
         
         
@@ -357,15 +360,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if horTotal > 0 && verTotal < 0 {
             finalAngle = 180 - finalAngle
         }
-        if horTotal > 0 && verTotal > 0 {
+       /* if horTotal > 0 && verTotal > 0 {
             finalAngle =  90 - finalAngle
-        }
+        }*/
         print(finalAngle)
+        finalAngle = Int(10 * (Double(finalAngle/10).rounded()))
+         print(finalAngle)
         print("JR", jumpRunLength[chosenPlaneNumber]/2, "FT", forwardThrow[chosenPlaneNumber] )
         var greenLight = (displacement - jumpRunLength[chosenPlaneNumber]/3 - forwardThrow[chosenPlaneNumber])
         greenLight = (greenLight*10).rounded() / 10
+       
         var finalA = String(finalAngle)
         
+        if finalA.characters.count == 1 {
+            finalA = "00" + finalA
+        }
         if finalA.characters.count == 2 {
             finalA = "0" + finalA
         }
@@ -374,6 +383,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         spot.text = spotWords
         
     } //calculate
+    
+   
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -433,6 +444,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
     }
+    @objc func doneClicked() {
+        view.endEditing(true)
+    }
     
     
     override func viewDidLoad() {
@@ -440,6 +454,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         wg.delegate = self
         dg.delegate = self
+        
+        // add done button to keyboard
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target:nil, action:nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        toolBar.setItems([flexibleSpace,doneButton], animated: false)
+        
+        wg.inputAccessoryView = toolBar
+        dg.inputAccessoryView = toolBar
+        w3.inputAccessoryView = toolBar
+        d3.inputAccessoryView = toolBar
+        w6.inputAccessoryView = toolBar
+        d6.inputAccessoryView = toolBar
+        w9.inputAccessoryView = toolBar
+        d9.inputAccessoryView = toolBar
+        w12.inputAccessoryView = toolBar
+        d12.inputAccessoryView = toolBar
         
         self.airplane.delegate = self
         self.airplane.dataSource = self
