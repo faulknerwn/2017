@@ -245,9 +245,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         convertedWindDistance[3] = Double(wind9s)! * 1.15 / 240
         convertedWindDistance[4] = Double(wind12s)! * 1.15 / 240
         
-        print("WindDistance",convertedWindDistance[0],convertedWindDistance[1],convertedWindDistance[2],convertedWindDistance[3],convertedWindDistance[4])
+        //print("WindDistance",convertedWindDistance[0],convertedWindDistance[1],convertedWindDistance[2],convertedWindDistance[3],convertedWindDistance[4])
         
-        print("WindDirection",convertedDirections[0],convertedDirections[1],convertedDirections[2],convertedDirections[3],convertedDirections[4] )
+        //print("WindDirection",convertedDirections[0],convertedDirections[1],convertedDirections[2],convertedDirections[3],convertedDirections[4] )
         
         var i = 0
         var convertedAngle = 0
@@ -308,19 +308,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             if 90 < convertedDirections[i] && convertedDirections[i] < 180 {
                 convertedAngle = 180 - convertedDirections[i]
-                print("CA",convertedAngle)
+                
                 vertical[i] = cos((Double(convertedAngle) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * -1
                 horizontal[i] = sin((Double(convertedAngle) * 3.14 / 180) ) * Double(convertedWindDistance[i])
             }
             if 180 < convertedDirections[i] && convertedDirections[i] < 270 {
                 convertedAngle = convertedDirections[i] - 180
-                print("CA",convertedAngle)
+                
                 vertical[i] = cos((Double(convertedAngle) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * -1
                 horizontal[i] = sin((Double(convertedAngle) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * -1
             }
             if 270 < convertedDirections[i] && convertedDirections[i] < 360 {
                 convertedAngle = 360 - convertedDirections[i]
-                print("CA",convertedAngle)
+                
                 vertical[i] = cos((Double(convertedAngle) * 3.14 / 180) ) * Double(convertedWindDistance[i])
                 horizontal[i] = sin((Double(convertedAngle) * 3.14 / 180) ) * Double(convertedWindDistance[i]) * -1
             }
@@ -330,11 +330,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if chosenPlane == "Cessna 182" {
                 vertical[4] = 0
                 horizontal[4] = 0
-                print("cessna")
+                
             }
             verTotal = verTotal + vertical[i]
             horTotal = horTotal + horizontal[i]
-            print ("vertical", vertical[i],"hor",horizontal[i], "VT",verTotal, "HT",horTotal)
+            
             i = i+1
             
             
@@ -343,9 +343,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         
         displacement = sqrt(verTotal*verTotal + horTotal*horTotal)
-        print ("displacement", displacement)
+        
         finalAngle = (Int(atan(abs(horTotal/verTotal)) * 180 / 3.14))
-        print(finalAngle)
+       
         
         /*if finalAngle < 0 {
          finalAngle = 0 - finalAngle
@@ -363,10 +363,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
        /* if horTotal > 0 && verTotal > 0 {
             finalAngle =  90 - finalAngle
         }*/
-        print(finalAngle)
+        
         finalAngle = Int(10 * (Double(finalAngle/10).rounded()))
-         print(finalAngle)
-        print("JR", jumpRunLength[chosenPlaneNumber]/2, "FT", forwardThrow[chosenPlaneNumber] )
+        
         var greenLight = (displacement - jumpRunLength[chosenPlaneNumber]/3 - forwardThrow[chosenPlaneNumber])
         greenLight = (greenLight*10).rounded() / 10
        

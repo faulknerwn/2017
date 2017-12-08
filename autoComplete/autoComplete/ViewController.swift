@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         return NSLocale(localeIdentifier: "en_US").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(code)"
         
     }
-    
+    let rigData = ["Aerodyne", "Altico", "Butler", "Fliteline", "Infinity", "Mirage", "National", "Parachute Labs", "Para-Phenalia", "Rigging Innovations", "Strong", "Sunpath", "Sunrise Rigging", "Stunts", "UPT"]
     override func viewDidLoad() {
         super.viewDidLoad()
         print(countries)
@@ -50,7 +50,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         autocompleteCountries.removeAll(keepingCapacity: false)
         print(substring)
         
-        for curString in countries {
+        //for curString in countries {
+        for curString in rigData {
             //print(curString)
             let myString: NSString! = curString.lowercased() as NSString
             let substringRange: NSRange! = myString.range(of: substring.lowercased())
