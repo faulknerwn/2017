@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C85a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Entry" representedClassName="Entry" syncable="YES" codeGenerationType="class">
         <attribute name="aadDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aadMfg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aadSerial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aadType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aAndP" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerMfg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="containerSerial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="iAndR" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reserveDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reserveMfg" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reserveSize" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="reserveSerial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reserveSize" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reserveType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entry" positionX="-63" positionY="-18" width="128" height="285"/>
+        <element name="Entry" positionX="-63" positionY="-18" width="128" height="330"/>
     </elements>
 </model>
