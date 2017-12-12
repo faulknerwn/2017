@@ -1,0 +1,5 @@
+use_frameworks!
+target "Riggers Logbook" do
+pod "SearchTextField"
+pod 'DLRadioButton', '~> 1.4'
+end
