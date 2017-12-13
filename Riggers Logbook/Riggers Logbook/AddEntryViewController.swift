@@ -9,27 +9,35 @@
 import UIKit
 import DLRadioButton
 import CoreData
+import SearchTextField
 
 class AddEntryViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
 
-    @IBOutlet var customerName: UITextField!
+   
+    @IBOutlet var customerName: SearchTextField!
     
     @IBOutlet var datePicker: UIDatePicker!
     
 
     @IBOutlet var address: UITextField!
     
-    @IBOutlet var containerMfg: UITextField!
     
-    @IBOutlet var containerType: UITextField!
+    @IBOutlet var containerMfg: SearchTextField!
+    
+    
+    @IBOutlet var containerType: SearchTextField!
     
     @IBOutlet var containerMfgDate: UITextField!
     
+    @IBOutlet var containerExtra: UITextField!
+    
     @IBOutlet var containerSerial: UITextField!
     
-    @IBOutlet var reserveMfg: UITextField!
+    @IBOutlet var reserveMfg: SearchTextField!
     
-    @IBOutlet var reserveType: UITextField!
+    
+    @IBOutlet var reserveType: SearchTextField!
+    
     
     @IBOutlet var reserveSize: UITextField!
     
@@ -39,9 +47,11 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBOutlet var aadSerial: UITextField!
     
-    @IBOutlet var aadMfg: UITextField!
     
-    @IBOutlet var aadType: UITextField!
+    @IBOutlet var aadMfg: SearchTextField!
+    
+    
+    @IBOutlet var aadType: SearchTextField!
     
     @IBOutlet var comments: UITextField!
     
@@ -144,6 +154,7 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
                 entry?.address = address.text
                 entry?.containerMfg = containerMfg.text
                 entry?.containerType = containerType.text
+                entry?.containerExtra = containerExtra.text
                 entry?.containerSerial = containerSerial.text
                 entry?.containerDate = containerMfgDate.text
                 entry?.reserveMfg = reserveMfg.text
@@ -181,6 +192,7 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
                 entry.containerMfg = containerMfg.text
                 entry.containerType = containerType.text
                 entry.containerSerial = containerSerial.text
+                entry.containerExtra = containerExtra.text
                 entry.containerDate = containerMfgDate.text
                 entry.reserveMfg = reserveMfg.text
                 entry.reserveDate = reserveMfgDate.text
@@ -220,7 +232,7 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
         // If rig exists Change Button to Update and add Delete Button
         //self.iANdR.isMultipleSelectionEnabled = true
         //self.aAndP.isMultipleSelectionEnabled = true
-        print("is nil", entry!.name)
+        
         if entry != nil {
             customerName.text = entry?.name!
             aadMfgDate.text = entry!.aadDate
@@ -230,6 +242,7 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
             aadType.text = entry!.aadType
             containerMfg.text = entry!.containerMfg
             containerType.text = entry!.containerType
+            containerExtra.text = entry!.containerExtra
             containerSerial.text = entry!.containerSerial
             containerMfgDate.text = entry!.containerDate
             reserveType.text = entry!.reserveType
@@ -252,6 +265,7 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
             aadType.text = ""
             containerMfg.text = ""
             containerType.text = ""
+            containerExtra.text = ""
             containerSerial.text = ""
             containerMfgDate.text = ""
             reserveType.text = ""
@@ -261,12 +275,31 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
             reserveSize.text = ""
             comments.text = ""
             
-            addUpdateButton.setTitle("Update", for: .normal)
+            addUpdateButton.setTitle("Add", for: .normal)
             deleteButton.isHidden = true
         }
         // Do any additional setup after loading the view.
         datePicker.addTarget(self, action: #selector(getDateAndTime), for: .valueChanged)
          self.getDateAndTime()
+        
+        containerMfg.filterStrings(["Aerodyne", "AeroSports USA", "Altico", "Butler", "Fliteline", "Velocity Skydiving Equipment", "Mirage Sys", "National", "Parachute Labs", "Para-Phenalia", "Rigging Innovations", "Strong", "Sunpath", "Sunrise Rigging", "Stunts", "UPT", "Parachutes de France", "Thomas Sports Equipment", "Precision", "Basik Air Concept", "Firebird", "North American Aerodynamics", "Para Avis", "Parachute Systems", "Paratec", "Peregrine", "Plexus", "Sife", "SWS"])
+        containerMfg.comparisonOptions = [.caseInsensitive]
+        containerMfg.maxNumberOfResults = 10
+        containerType.filterStrings(["Icon", "SafetyPro", "Dolphin", "Reflex", "Infinity", "Mirage", "Racer", "Softie", "Talon", "Flexon", "Voodoo", "Voodoo Curv", "Para-Cushion", "Dual Hawk", "TNT", "Quasar", "Javelin", "Wings", "Eclipse", "Vector I", "Vector II", "Vector III", "Atom", "TearDrop", "P-124 Aviator", "Advance", "Evo", "Omega", "Flying High Manufacturing", "C-Flex", "T-Flex", "Sidewinder", "Power Racer", "Shadow Racer", "RTS", "Centaurus", "Satchel", "Spirit", "TP-5", "Beast", "Vortex", "Next", "Glide", "Triton", "Plexus Tandem", "Classic Pro", "Genera", "Telesis", "RT", "Fire", "Next Tandem", "Zerox", "Viper", "Sigma", "Micron"])
+        containerType.comparisonOptions = [.caseInsensitive]
+        containerType.maxNumberOfResults = 10
+        reserveMfg.filterStrings(["Aerodyne", "Parachute Labs", "Performance Designs", "Precision", "Icarus Canopies", "Glidepath", "Flight Concepts", "Django", "Pisa", "APS", "FTS", "Basik Air Concept", "Paraflite", "Firebird", "North American Aerodynamics", "Parachute Systems", "Parachutes de France", "Paratec" ])
+        reserveMfg.comparisonOptions = [.caseInsensitive]
+        reserveMfg.maxNumberOfResults = 10
+        reserveType.filterStrings(["Nano", "IC Reserve", "PDR", "Optimum", "Angelfire", "Smart", "Tempo", "Laser", "Mini Cricket", "Cricket", "Firelite", "Maverick", "Fury", "Sharpchuter", "Raven", "Super Raven", "MicroRaven", "Dash-M", "Dash-MZ", "R-Max", "X-Fast", "Master", "Quick 400", "Rush", "Eagle", "Swift Plus", "Swift", "Decelerator", "Minimax", "Techno", "Speed 2000", "Stellar", "Lo-Po Reserve"])
+        reserveType.comparisonOptions = [.caseInsensitive]
+        reserveType.maxNumberOfResults = 10
+        aadMfg.filterStrings(["AAD", "Airtec", "Aviacom", "FXC", "Mars"])
+        aadMfg.comparisonOptions = [.caseInsensitive]
+        aadMfg.maxNumberOfResults = 10
+        aadType.filterStrings(["M2", "Vigil", "Vigil 2", "Cypres", "Cypres 2", "Argus", "FXC 12000"])
+        aadType.comparisonOptions = [.caseInsensitive]
+        aadType.maxNumberOfResults = 10
     }
 
     override func didReceiveMemoryWarning() {

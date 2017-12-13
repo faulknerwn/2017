@@ -9,6 +9,7 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="containerExtra" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerMfg" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerSerial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerType" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,6 +23,6 @@
         <attribute name="reserveType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entry" positionX="-63" positionY="-18" width="128" height="330"/>
+        <element name="Entry" positionX="-63" positionY="-18" width="128" height="345"/>
     </elements>
 </model>

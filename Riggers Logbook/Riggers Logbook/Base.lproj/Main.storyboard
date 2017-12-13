@@ -57,13 +57,14 @@
         <!--Add Entry View Controller-->
         <scene sceneID="TaV-bP-MY9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPO-7Q-7IV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jdN-SL-1Wb" customClass="AddEntryViewController" customModule="Riggers_Logbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTy-gH-VLC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Container mfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zI4-VE-3L0">
-                                <rect key="frame" x="33" y="181" width="136" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Container mfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zI4-VE-3L0" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="33" y="269" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -72,8 +73,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="kg0-SK-VkA"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Container" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8v-Fq-eeP">
-                                <rect key="frame" x="196" y="181" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8v-Fq-eeP" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="175" y="269" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -82,8 +83,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="YYS-ua-hTJ"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Mfg Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9K-Jq-gHT">
-                                <rect key="frame" x="514" y="181" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mfg Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9K-Jq-gHT">
+                                <rect key="frame" x="589" y="269" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -92,8 +93,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="Zxd-NH-JCE"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Reserve mfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7x-jb-3dL">
-                                <rect key="frame" x="72" y="235" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reserve mfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7x-jb-3dL" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="33" y="339" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -102,8 +103,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="9Ot-vD-btd"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Reserve Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f47-Wl-9H0">
-                                <rect key="frame" x="196" y="235" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f47-Wl-9H0" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="175" y="339" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -112,8 +113,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="oA2-fG-xPq"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="* Reserve Mfg date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCI-Wp-v79">
-                                <rect key="frame" x="589" y="235" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mfg date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCI-Wp-v79">
+                                <rect key="frame" x="589" y="339" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -123,7 +124,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBa-kG-PU6">
-                                <rect key="frame" x="433" y="235" width="97" height="30"/>
+                                <rect key="frame" x="318" y="339" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -132,8 +133,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="UaQ-tB-EV5"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAD Mfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gU-pVP">
-                                <rect key="frame" x="72" y="316" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAD Mfg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-gU-pVP" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="33" y="399" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -142,8 +143,18 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="3WF-Vk-EbT"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAD Mfg Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEi-Jj-34J">
-                                <rect key="frame" x="589" y="316" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nqJ-bU-KvJ" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="175" y="399" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jdN-SL-1Wb" id="thR-8h-XkW"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mfg Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEi-Jj-34J">
+                                <rect key="frame" x="456" y="399" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -153,7 +164,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="comments" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-tU-IO8">
-                                <rect key="frame" x="175" y="627" width="452" height="104"/>
+                                <rect key="frame" x="105" y="577" width="487" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -163,7 +174,7 @@
                                 </connections>
                             </textField>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-mE-0PI">
-                                <rect key="frame" x="448" y="16" width="300" height="106"/>
+                                <rect key="frame" x="448" y="67" width="300" height="106"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="533707843.68045998">
                                     <!--2017-11-30 04:10:43 +0000-->
@@ -172,8 +183,8 @@
                                     <action selector="datePickerChanged:" destination="jdN-SL-1Wb" eventType="valueChanged" id="1Bl-oX-Jg0"/>
                                 </connections>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuD-Zl-fAY">
-                                <rect key="frame" x="36" y="130" width="631" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuD-Zl-fAY" customClass="SearchTextField">
+                                <rect key="frame" x="10" y="189" width="631" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -210,10 +221,10 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Gd-lT-KS2">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="23" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Add New Entry" id="5Pk-Zc-jXx">
+                                    <navigationItem title="Add/Update Entry" id="5Pk-Zc-jXx">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vjf-RH-doj">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="cancelSegue" id="sPe-Ja-wVq"/>
@@ -222,8 +233,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Customer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZE-0V-ndd">
-                                <rect key="frame" x="20" y="71" width="404" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Customer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZE-0V-ndd" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="0.0" y="105" width="404" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -232,16 +243,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="rmA-nM-Qy2"/>
                                 </connections>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LW-CL-LHr">
-                                <rect key="frame" x="559" y="874" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delete"/>
-                                <connections>
-                                    <action selector="deletePushed:" destination="jdN-SL-1Wb" eventType="touchUpInside" id="kSj-An-3nv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1k-7K-u3h">
-                                <rect key="frame" x="175" y="874" width="167" height="30"/>
+                                <rect key="frame" x="105" y="816" width="167" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="32"/>
                                 <state key="normal" title="Add Entry"/>
@@ -250,7 +253,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE6-MY-6bf" customClass="DLRadioButton">
-                                <rect key="frame" x="105" y="543" width="86" height="30"/>
+                                <rect key="frame" x="309" y="497" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="A&amp;P">
@@ -276,8 +279,8 @@
                                     <action selector="aAndPClicked:" destination="jdN-SL-1Wb" eventType="touchUpInside" id="2Ns-xJ-bea"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Container Serial" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V3e-9v-By3">
-                                <rect key="frame" x="336" y="181" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serial" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V3e-9v-By3">
+                                <rect key="frame" x="456" y="269" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -286,8 +289,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="K2y-uF-vVf"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reserve Serial" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-dd-Vwq">
-                                <rect key="frame" x="308" y="235" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serial" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-dd-Vwq">
+                                <rect key="frame" x="456" y="339" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -296,8 +299,8 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="1v7-QL-rTN"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAD Serial" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWz-wE-2hS">
-                                <rect key="frame" x="336" y="316" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serial" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWz-wE-2hS">
+                                <rect key="frame" x="318" y="399" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -306,45 +309,51 @@
                                     <outlet property="delegate" destination="jdN-SL-1Wb" id="fBM-7m-nzf"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAD type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nqJ-bU-KvJ">
-                                <rect key="frame" x="196" y="316" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type/size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hht-Xk-31k">
+                                <rect key="frame" x="318" y="269" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                <connections>
-                                    <outlet property="delegate" destination="jdN-SL-1Wb" id="thR-8h-XkW"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LW-CL-LHr">
+                                <rect key="frame" x="473" y="816" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="32"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deletePushed:" destination="jdN-SL-1Wb" eventType="touchUpInside" id="kSj-An-3nv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Poh-sb-74X"/>
                     </view>
                     <connections>
                         <outlet property="aAndP" destination="CE6-MY-6bf" id="Qap-rK-oex"/>
-                        <outlet property="aadMfg" destination="W1N-gU-pVP" id="jjZ-5A-shn"/>
+                        <outlet property="aadMfg" destination="W1N-gU-pVP" id="hcz-Gy-xmn"/>
                         <outlet property="aadMfgDate" destination="mEi-Jj-34J" id="Q1e-Kf-F8o"/>
                         <outlet property="aadSerial" destination="dWz-wE-2hS" id="50c-aO-e0w"/>
-                        <outlet property="aadType" destination="nqJ-bU-KvJ" id="D7I-BQ-BtG"/>
+                        <outlet property="aadType" destination="nqJ-bU-KvJ" id="UMj-Po-NYJ"/>
                         <outlet property="addUpdateButton" destination="J1k-7K-u3h" id="DPg-nO-tf9"/>
                         <outlet property="address" destination="GuD-Zl-fAY" id="hAr-aM-81F"/>
                         <outlet property="comments" destination="gMI-tU-IO8" id="Nta-fP-IUT"/>
-                        <outlet property="containerMfg" destination="zI4-VE-3L0" id="xHR-MD-eM6"/>
+                        <outlet property="containerExtra" destination="Hht-Xk-31k" id="glM-s1-VQW"/>
+                        <outlet property="containerMfg" destination="zI4-VE-3L0" id="cNE-eW-RXW"/>
                         <outlet property="containerMfgDate" destination="G9K-Jq-gHT" id="kQJ-qQ-bDn"/>
                         <outlet property="containerSerial" destination="V3e-9v-By3" id="7Cg-X4-MRi"/>
-                        <outlet property="containerType" destination="U8v-Fq-eeP" id="yzl-zS-zmQ"/>
+                        <outlet property="containerType" destination="U8v-Fq-eeP" id="bVG-Ha-6MY"/>
                         <outlet property="customerName" destination="lZE-0V-ndd" id="7fj-Lz-8Kn"/>
                         <outlet property="datePicker" destination="Kjc-mE-0PI" id="m8T-eN-SCh"/>
                         <outlet property="deleteButton" destination="0LW-CL-LHr" id="M6b-HV-DG5"/>
                         <outlet property="iANdR" destination="tFc-B4-M4J" id="Kv3-Pw-kZE"/>
-                        <outlet property="reserveMfg" destination="w7x-jb-3dL" id="XMK-nm-LVt"/>
+                        <outlet property="reserveMfg" destination="w7x-jb-3dL" id="Cfx-cB-yNn"/>
                         <outlet property="reserveMfgDate" destination="pCI-Wp-v79" id="AbD-XH-bWj"/>
                         <outlet property="reserveSerial" destination="brZ-dd-Vwq" id="GHl-AC-8Mj"/>
                         <outlet property="reserveSize" destination="DBa-kG-PU6" id="YMC-pw-vwV"/>
-                        <outlet property="reserveType" destination="f47-Wl-9H0" id="aX4-6g-eSL"/>
+                        <outlet property="reserveType" destination="f47-Wl-9H0" id="sal-Fu-Kvb"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bPO-7Q-7IV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="752.34375" y="177.5390625"/>
         </scene>
