@@ -65,26 +65,29 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
     var requestIdentifier: String = ""
     
     @IBAction func iAndRClicked(_ sender: Any) {
-        if iANdR.isSelected {
-                iAndRIsClicked = true
+       if iANdR.isSelected {
+                iAndRIsClicked = 1
+        
             }
         else {
-            iAndRIsClicked = false
-           
+            iAndRIsClicked = 0
+        
         }
        
     }
     
     @IBAction func aAndPClicked(_ sender: Any) {
         if aAndP.isSelected {
-        aAndPIsClicked = true
+        aAndPIsClicked = 1
+            
         } else {
-            iAndRIsClicked = false
+            iAndRIsClicked = 0
+            
         }
     }
     
-    var iAndRIsClicked = false
-    var aAndPIsClicked = false
+    var iAndRIsClicked : Int16 = 0
+    var aAndPIsClicked : Int16 = 0
     
     
     
@@ -169,8 +172,9 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
                 entry?.comments = comments.text
                 entry?.aAndP = aAndPIsClicked
                 entry?.iAndR = iAndRIsClicked
-                
+            
                 appDelegate.saveContext()
+            
                 performSegue(withIdentifier: "cancelSegue", sender: nil)
                 
             }
@@ -230,8 +234,8 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
         super.viewDidLoad()
         
         // If rig exists Change Button to Update and add Delete Button
-        //self.iANdR.isMultipleSelectionEnabled = true
-        //self.aAndP.isMultipleSelectionEnabled = true
+        self.iANdR.isMultipleSelectionEnabled = true
+        self.aAndP.isMultipleSelectionEnabled = true
         
         if entry != nil {
             customerName.text = entry?.name!
@@ -251,6 +255,28 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
             reserveMfg.text = entry!.reserveMfg
             reserveSize.text = entry!.reserveSize
             comments.text = entry!.comments
+            
+            
+            if  entry!.aAndP == 1 {
+                aAndP.isSelected = true
+                aAndP.sendActions(for: .touchDown)
+                aAndPIsClicked = 1
+            } else {
+                aAndP.isSelected = false
+                aAndP.sendActions(for: .touchUpInside)
+                aAndPIsClicked = 0
+            }
+            if entry!.iAndR == 1 {
+                iANdR.isSelected = true
+                iANdR.sendActions(for: .touchDown)
+                iAndRIsClicked = 1
+            }
+            else {
+                iANdR.isSelected = false
+                iANdR.sendActions(for: .touchUpInside)
+                iAndRIsClicked = 0
+            }
+            
             
             addUpdateButton.setTitle("Update", for: .normal)
             deleteButton.isHidden = false
@@ -274,6 +300,12 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
             reserveMfg.text = ""
             reserveSize.text = ""
             comments.text = ""
+            aAndPIsClicked = 0
+            iAndRIsClicked = 0
+            iANdR.isSelected = false
+            iANdR.sendActions(for: .touchUpInside)
+            aAndP.isSelected = false
+            aAndP.sendActions(for: .touchUpInside)
             
             addUpdateButton.setTitle("Add", for: .normal)
             deleteButton.isHidden = true
@@ -282,22 +314,22 @@ class AddEntryViewController: UIViewController, UINavigationControllerDelegate, 
         datePicker.addTarget(self, action: #selector(getDateAndTime), for: .valueChanged)
          self.getDateAndTime()
         
-        containerMfg.filterStrings(["Aerodyne", "AeroSports USA", "Altico", "Butler", "Fliteline", "Velocity Skydiving Equipment", "Mirage Sys", "National", "Parachute Labs", "Para-Phenalia", "Rigging Innovations", "Strong", "Sunpath", "Sunrise Rigging", "Stunts", "UPT", "Parachutes de France", "Thomas Sports Equipment", "Precision", "Basik Air Concept", "Firebird", "North American Aerodynamics", "Para Avis", "Parachute Systems", "Paratec", "Peregrine", "Plexus", "Sife", "SWS"])
+        containerMfg.filterStrings(["Aerodyne", "AeroSports USA", "Altico", "Basik Air Concept", "Butler",   "Firebird", "Fliteline", "Flying High Manufacturing",  "Mirage Sys", "National", "North American Aerodynamics", "Parachutes de France", "Parachute Labs", "Paratec", "Para Avis",  "Parachute Systems", "Para-Phenalia", "Peregrine", "Plexus", "Precision", "Rigging Innovations", "Sife", "SWS", "Strong", "Sunpath", "Sunrise Rigging", "Stunts",  "Thomas Sports Equipment", "UPT", "Velocity Skydiving Equipment"])
         containerMfg.comparisonOptions = [.caseInsensitive]
         containerMfg.maxNumberOfResults = 10
-        containerType.filterStrings(["Icon", "SafetyPro", "Dolphin", "Reflex", "Infinity", "Mirage", "Racer", "Softie", "Talon", "Flexon", "Voodoo", "Voodoo Curv", "Para-Cushion", "Dual Hawk", "TNT", "Quasar", "Javelin", "Wings", "Eclipse", "Vector I", "Vector II", "Vector III", "Atom", "TearDrop", "P-124 Aviator", "Advance", "Evo", "Omega", "Flying High Manufacturing", "C-Flex", "T-Flex", "Sidewinder", "Power Racer", "Shadow Racer", "RTS", "Centaurus", "Satchel", "Spirit", "TP-5", "Beast", "Vortex", "Next", "Glide", "Triton", "Plexus Tandem", "Classic Pro", "Genera", "Telesis", "RT", "Fire", "Next Tandem", "Zerox", "Viper", "Sigma", "Micron"])
+        containerType.filterStrings(["Advance", "Atom", "Beast", "Centaurus",  "C-Flex", "Classic Pro", "Dolphin", "Dual Hawk", "Eclipse", "Evo", "Fire", "Flexon", "Genera", "Glide", "Icon", "Infinity", "Javelin", "Micron", "Mirage", "Next", "Next Tandem", "Omega", "P-124 Aviator", "Para-Cushion", "Plexus Tandem", "Power Racer", "Quasar", "Racer", "Reflex", "RT", "RTS", "SafetyPro", "Satchel", "Shadow Racer", "Sidewinder", "Sigma", "Softie", "Spirit", "Talon",  "TearDrop", "Telesis", "T-Flex", "TNT", "TP-5", "Triton", "Vector I", "Vector II", "Vector III", "Viper", "Voodoo", "Voodoo Curv", "Vortex", "Wings", "Zerox"  ])
         containerType.comparisonOptions = [.caseInsensitive]
         containerType.maxNumberOfResults = 10
-        reserveMfg.filterStrings(["Aerodyne", "Parachute Labs", "Performance Designs", "Precision", "Icarus Canopies", "Glidepath", "Flight Concepts", "Django", "Pisa", "APS", "FTS", "Basik Air Concept", "Paraflite", "Firebird", "North American Aerodynamics", "Parachute Systems", "Parachutes de France", "Paratec" ])
+        reserveMfg.filterStrings(["Aerodyne", "APS", "Basik Air Concept", "Django", "Firebird", "Flight Concepts", "FTS", "Glidepath", "Icarus Canopies", "North American Aerodynamics", "Parachute Labs", "Parachute Systems", "Parachutes de France", "Paraflite", "Paratec", "Performance Designs", "Pisa", "Precision"       ])
         reserveMfg.comparisonOptions = [.caseInsensitive]
         reserveMfg.maxNumberOfResults = 10
-        reserveType.filterStrings(["Nano", "IC Reserve", "PDR", "Optimum", "Angelfire", "Smart", "Tempo", "Laser", "Mini Cricket", "Cricket", "Firelite", "Maverick", "Fury", "Sharpchuter", "Raven", "Super Raven", "MicroRaven", "Dash-M", "Dash-MZ", "R-Max", "X-Fast", "Master", "Quick 400", "Rush", "Eagle", "Swift Plus", "Swift", "Decelerator", "Minimax", "Techno", "Speed 2000", "Stellar", "Lo-Po Reserve"])
+        reserveType.filterStrings(["Angelfire", "Cricket", "Dash-M", "Dash-MZ", "Decelerator", "Eagle", "Firelite", "Fury", "IC Reserve", "Laser", "Lo-Po Reserve", "Master", "Maverick", "MicroRaven", "Mini Cricket", "Minimax", "Nano", "Optimum", "PDR", "Quick 400", "R-Max", "Raven", "Rush", "Sharpchuter", "Smart", "Speed 2000", "Stellar", "Super Raven", "Swift Plus", "Swift", "Techno",  "Tempo",  "X-Fast" ])
         reserveType.comparisonOptions = [.caseInsensitive]
         reserveType.maxNumberOfResults = 10
         aadMfg.filterStrings(["AAD", "Airtec", "Aviacom", "FXC", "Mars"])
         aadMfg.comparisonOptions = [.caseInsensitive]
         aadMfg.maxNumberOfResults = 10
-        aadType.filterStrings(["M2", "Vigil", "Vigil 2", "Cypres", "Cypres 2", "Argus", "FXC 12000"])
+        aadType.filterStrings(["Argus", "Cypres", "Cypres 2", "FXC 12000", "M2", "Vigil", "Vigil 2"])
         aadType.comparisonOptions = [.caseInsensitive]
         aadType.maxNumberOfResults = 10
     }

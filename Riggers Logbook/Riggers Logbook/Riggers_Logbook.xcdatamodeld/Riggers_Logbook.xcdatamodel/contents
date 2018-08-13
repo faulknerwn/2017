@@ -5,7 +5,7 @@
         <attribute name="aadMfg" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aadSerial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aadType" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="aAndP" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="aAndP" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerDate" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,7 +14,7 @@
         <attribute name="containerSerial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="containerType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="iAndR" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="iAndR" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reserveDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reserveMfg" optional="YES" attributeType="String" syncable="YES"/>

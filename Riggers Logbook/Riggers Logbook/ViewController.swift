@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var logbook: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("entries", entries.count)
+        
         return entries.count
         
     }
@@ -35,8 +35,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = entry.name
         cell.detailTextLabel?.numberOfLines = 0; // 0 means 'no limit'
         logbook.rowHeight = UITableViewAutomaticDimension
-        logbook.estimatedRowHeight = 144
-        logbook.contentSize.height = 2000
+        
+        
       
         if entry.date != nil {
             
